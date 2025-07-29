@@ -1,0 +1,13 @@
+name: First Workflow
+
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  example-job:
+    runs-on: ubuntu-lateset
+
+    steps:
+      - name: Print a ReadFile
+        run: echo "welcome to our first GitHub Actions Workflow!"
