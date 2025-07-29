@@ -4,10 +4,11 @@ on:
   push:
     branches:
       - main
+      
 jobs:
   example-job:
     runs-on: ubuntu-lateset
 
     steps:
-      - name: Print a ReadFile
+      - name: Print a welcome message
         run: echo "welcome to our first GitHub Actions Workflow!"
