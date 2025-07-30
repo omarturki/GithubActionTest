@@ -1,0 +1,32 @@
+name: CI/CD for PWA
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18' # o la versión que uses en tu proyecto
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test # cambia si usas otra herramienta de test
+
+      - name: Build
+        run: npm run build
+
+      # Opcional: Deploy (ej. a GitHub Pages, Vercel, etc.)
+      # Puedes agregar pasos aquí según tu destino de despliegue.
